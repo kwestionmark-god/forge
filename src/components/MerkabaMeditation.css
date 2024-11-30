@@ -1,0 +1,165 @@
+/* src/components/MerkabaMeditation.css */
+
+/* Container Styles */
+.meditation-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Three.js Canvas */
+.three-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Control Buttons */
+.control-buttons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.control-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s;
+}
+
+.control-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Floating Audio Controls */
+.floating-audio-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 15; /* Ensure it sits above other elements */
+  display: flex;
+  gap: 10px;
+}
+
+.audio-control-button {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1.2em;
+}
+
+.audio-control-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Settings Panel */
+.settings-panel {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Hidden by default */
+  width: 300px;
+  height: 100%;
+  background-color: rgba(26, 26, 26, 0.95);
+  color: white;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+  transition: right 0.3s ease-in-out;
+  z-index: 20;
+  overflow-y: auto;
+}
+
+/* When Settings Panel is Open */
+.settings-panel.open {
+  right: 0;
+}
+
+/* Close Button */
+.close-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+/* Control Groups */
+.control-group {
+  margin-bottom: 20px;
+}
+
+.control-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.control-group input[type="range"],
+.control-group input[type="color"] {
+  width: 100%;
+}
+
+.control-group span {
+  display: block;
+  margin-top: 5px;
+  text-align: right;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .settings-panel {
+    width: 100%;
+  }
+  
+  .control-buttons {
+    top: 5px;
+    right: 5px;
+    flex-direction: column;
+  }
+
+  .control-button {
+    padding: 8px;
+    font-size: 0.9em;
+  }
+
+  .settings-panel {
+    padding: 15px;
+  }
+
+  .close-button {
+    top: 10px;
+    right: 10px;
+  }
+
+  .floating-audio-controls {
+    bottom: 10px;
+    padding: 0 20px;
+  }
+
+  .audio-control-button {
+    padding: 12px;
+    font-size: 1em;
+  }
+}
+
+/* Hide YouTube Audio Player */
+.youtube-audio-player {
+  display: none; /* Hide the container */
+}
